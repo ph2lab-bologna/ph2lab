@@ -238,46 +238,98 @@ a{color:inherit}
 #contact { scroll-margin-top: 0; }
 
 
-/* Contact panel: opens instantly without scrolling through the page */
-.contact-panel{position:fixed;inset:0;z-index:1000;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.58);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease;color:#fff}
+/* Contact panel — consolidated final rules */
+.contact-panel{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  background:rgba(0,0,0,.58);
+  backdrop-filter:blur(8px);
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .22s ease,visibility .22s ease;
+  color:#fff;
+}
 .contact-panel.open{opacity:1;visibility:visible}
-.contact-panel-inner{position:relative;width:100%;background:#111;padding:clamp(42px,7vw,100px) 5vw clamp(46px,7vw,90px);transform:translateY(34px);transition:transform .28s ease;border-top:1px solid #3b3b3b}
+.contact-panel-inner{
+  position:relative;
+  width:100%;
+  background:#111;
+  padding:clamp(42px,7vw,90px) 5vw clamp(46px,7vw,84px);
+  transform:translateY(34px);
+  transition:transform .28s ease;
+  border-top:1px solid #3b3b3b;
+}
 .contact-panel.open .contact-panel-inner{transform:translateY(0)}
-.contact-panel-close{position:absolute;right:5vw;top:28px;border:0;background:transparent;color:#fff;font-size:44px;line-height:1;cursor:pointer}
-.contact-kicker{display:block;font-size:11px;letter-spacing:.18em;color:#aaa;margin-bottom:22px}
-.contact-panel h2{margin:0 0 34px;font-size:clamp(42px,8vw,120px);line-height:.9;letter-spacing:-.06em;max-width:1100px}
-.contact-panel-links{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.contact-panel-links a{color:#fff;text-decoration:none;font-size:clamp(16px,2vw,27px);border-bottom:1px solid #555;padding-bottom:5px}
-.contact-panel-links a:hover{border-color:#f25a00;color:#f25a00}
-body.contact-panel-active{overflow:hidden!important}
-@media(max-width:760px){.contact-panel-inner{padding:70px 22px 48px}.contact-panel-close{right:22px;top:20px}.contact-panel h2{font-size:48px}}
-
-.contact-social-links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:14px}
-.contact-social-links a{font-size:clamp(14px,1.4vw,20px)}
-@media(max-width:760px){.contact-social-links{gap:8px 16px}}
-
-
-.contact-icon-links{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;align-items:center}
-.contact-icon-links a{display:grid!important;place-items:center;width:52px;height:52px;border-bottom:0!important;padding:0!important;color:#fff!important;transition:transform .2s ease,opacity .2s ease}
+.contact-panel-close{
+  position:absolute;
+  right:5vw;
+  top:28px;
+  border:0;
+  background:transparent;
+  color:#fff;
+  font-size:44px;
+  line-height:1;
+  cursor:pointer;
+}
+.contact-kicker{
+  display:block;
+  font-size:11px;
+  letter-spacing:.18em;
+  color:#aaa;
+  margin-bottom:22px;
+}
+.contact-brand{
+  display:block;
+  width:min(760px,78vw);
+  margin:0 0 28px;
+  color:#fff;
+  cursor:default;
+  pointer-events:none;
+}
+.contact-brand .footer-logo{
+  display:block;
+  width:min(560px,62vw);
+  height:auto;
+}
+.contact-panel-links{display:block}
+.contact-icon-links{
+  display:grid;
+  grid-template-columns:repeat(8,52px);
+  gap:clamp(14px,2vw,28px);
+  align-items:center;
+  margin:0;
+}
+.contact-icon-links a{
+  display:grid!important;
+  place-items:center;
+  width:52px;
+  height:52px;
+  border:0!important;
+  padding:0!important;
+  color:#fff!important;
+  text-decoration:none;
+  transition:transform .2s ease,opacity .2s ease;
+}
 .contact-icon-links a:hover{transform:translateY(-3px);opacity:.8}
-.contact-icon-links svg{width:42px;height:42px;overflow:visible}
-@media(max-width:760px){.contact-icon-links{gap:10px}.contact-icon-links a{width:42px;height:42px}.contact-icon-links svg{width:34px;height:34px}}
-
-/* Contact panel: PH2 LAB logo + essential contacts */
-.contact-panel-inner{padding-top:clamp(34px,5vw,72px)}
-.contact-brand{display:flex;align-items:flex-end;gap:clamp(14px,2vw,28px);width:min(760px,78vw);margin:22px 0 34px;color:#fff}
-.contact-brand .footer-logo{width:min(560px,62vw);height:auto;display:block}
-.contact-brand .footer-brand-text{font-size:clamp(28px,4.2vw,68px);font-weight:700;letter-spacing:.22em;line-height:1;margin-bottom:.08em}
-.contact-panel-links{gap:10px}
-.contact-icon-links{display:flex;flex-wrap:wrap;gap:clamp(18px,2.6vw,38px);margin-top:26px;align-items:center}
-.contact-icon-links a{border:0!important;padding:0!important;width:clamp(34px,3.2vw,52px);height:clamp(34px,3.2vw,52px);display:grid;place-items:center;color:#fff}
-.contact-icon-links svg{width:100%;height:100%;display:block}
-@media(max-width:760px){.contact-brand{width:92vw;margin:16px 0 26px}.contact-brand .footer-logo{width:68vw}.contact-panel-links>a{font-size:20px}.contact-icon-links{gap:18px}}
-
-/* Contact panel final: PH2 logo only, contact actions only as icons */
-.contact-panel .contact-brand{align-items:center;margin-bottom:24px}
-.contact-panel .contact-panel-links{display:block}
-.contact-panel .contact-icon-links{margin-top:0}
+.contact-icon-links svg{display:block;width:42px;height:42px;overflow:visible}
+body.contact-panel-active{overflow:hidden!important}
+@media(max-width:760px){
+  .contact-panel-inner{padding:70px 22px 48px}
+  .contact-panel-close{right:22px;top:20px}
+  .contact-brand{width:92vw;margin-bottom:24px}
+  .contact-brand .footer-logo{width:min(68vw,420px)}
+  .contact-icon-links{
+    grid-template-columns:repeat(8,minmax(28px,1fr));
+    gap:8px;
+    width:100%;
+  }
+  .contact-icon-links a{width:40px;height:40px}
+  .contact-icon-links svg{width:34px;height:34px}
+}
 
 /* PH2 LAB — navigazione richiesta: tre linee, nessuna scritta MENU */
 .menu-button{width:42px;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:10px 0;pointer-events:auto}
