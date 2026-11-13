@@ -334,7 +334,7 @@ header .head{gap:22px;justify-content:space-between}
 .notice a{color:#fff;font-weight:800}
 .notice a:hover,.notice a:focus-visible{text-decoration:underline}
 .shop-brand-lockup .partner-mark{position:relative;display:block;padding:0;border:0;background:#000;color:inherit}
-.shop-brand-lockup .partner-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.62;transition:opacity .18s ease}
+.shop-brand-lockup .partner-mark img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:center;opacity:.62;transition:opacity .18s ease}
 .shop-brand-lockup button{cursor:pointer}
 .shop-brand-lockup .partner-mark[aria-pressed="true"] img,.shop-brand-lockup .partner-mark:hover img,.shop-brand-lockup .partner-mark:focus-visible img{opacity:1}
 .shop-brand-lockup .partner-mark:hover{opacity:1}
@@ -353,9 +353,9 @@ header .head{gap:22px;justify-content:space-between}
 <script src="shop-opening.js"></script>
 <div class="notice"><a href="/">PH2 LAB · CREATIVE GRAPHIC SOLUTIONS</a></div>
 <header><div class="wrap head"><div class="shop-brand-lockup" role="group" aria-label="Collezioni e progetti">
-  <button type="button" class="partner-mark partner-mark-just" data-brand-filter="CITY COLLECTION" aria-pressed="true" onclick="selectShopBrand(this.dataset.brandFilter)"><img src="opening-just-bologna.png" alt="Just Bologna"></button>
-  <button type="button" class="partner-mark partner-mark-ph2" data-brand-filter="PH2 LAB DESIGN" aria-pressed="false" onclick="selectShopBrand(this.dataset.brandFilter)"><img src="opening-ph2.png" alt="PH2 — Just Acid Style"></button>
-  <a class="partner-mark partner-mark-zelab" href="https://ze-lab.weebly.com/"><img src="opening-zelab.png" alt="ZeLab — Uncommon Creative Goods"></a>
+  <button type="button" class="partner-mark partner-mark-just" data-brand-filter="CITY COLLECTION" aria-pressed="true" onclick="selectShopBrand(this.dataset.brandFilter)"><img src="header-just-bologna.png" alt="Just Bologna"></button>
+  <button type="button" class="partner-mark partner-mark-ph2" data-brand-filter="PH2 LAB DESIGN" aria-pressed="false" onclick="selectShopBrand(this.dataset.brandFilter)"><img src="header-ph2.png" alt="PH2 — Just Acid Style"></button>
+  <a class="partner-mark partner-mark-zelab" href="https://ze-lab.weebly.com/"><img src="header-zelab.png" alt="ZeLab — Uncommon Creative Goods"></a>
 </div><div class="header-search" role="search"><label class="sr-only" for="productSearch">Cerca una maglietta</label><input type="search" id="productSearch" placeholder="Cerca una maglietta..." aria-label="Cerca per nome o codice" oninput="searchProducts(this.value)"><button type="button" onclick="searchProducts(document.getElementById('productSearch').value,true)" aria-label="Cerca">⌕</button></div><div class="headright"><button class="bag" type="button" onclick="alert('Per ora niente checkout automatico: le richieste arrivano dirette a PH2 LAB.')">ORDINE DIRETTO</button></div></div></header>
 <main id="top">
 <section class="intro-strip"><div class="wrap"><div class="intro-overline">PH2 LAB / SHOP — BOLOGNA DIRECT SELECTION</div><div class="intro-heading"><h1>MADE TO BE WORN<span class="dot">.</span></h1><p>Grafiche originali, T-shirt da indossare. Scegli il modello e la taglia: per gli ordini a Bologna ci sentiamo direttamente, senza carrello.</p></div></div></section><section class="block" id="best" aria-labelledby="bestTitle"><div class="wrap"><div class="titlebar"><h2 id="bestTitle">BEST SELLER<span style="color:var(--orange)">.</span></h2><span class="section-count">DUE LINEE, UN SOLO SHOP</span></div>
