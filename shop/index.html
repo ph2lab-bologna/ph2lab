@@ -295,8 +295,18 @@ header .head{gap:22px;justify-content:space-between}
 #overlay .dialog .gallery-thumb:focus-visible,
 #lightbox button:focus-visible {outline:2px solid #111;outline-offset:2px;}
 </style>
+<link rel="stylesheet" href="shop-opening.css">
 </head>
 <body>
+<dialog class="shop-opening" aria-label="Introduzione allo shop PH2 LAB">
+  <div class="shop-opening-stage" aria-hidden="true">
+    <img class="shop-opening-logo" data-src="opening-zelab.png" alt="">
+    <img class="shop-opening-logo" data-src="opening-just-bologna.png" alt="">
+    <img class="shop-opening-logo" data-src="opening-ph2.png" alt="">
+  </div>
+  <button class="shop-opening-skip" type="button">SALTA INTRO</button>
+</dialog>
+<script src="shop-opening.js"></script>
 <div class="notice">PH2 LAB · JUST BOLOGNA & ORIGINAL DESIGN · 1 COLORE PER MODELLO · ORDINE DIRETTO</div>
 <header><div class="wrap head"><a class="brand-original" href="https://ph2lab.com/" aria-label="PH2 LAB — Torna al sito principale"><svg class="ph2-original-logo" aria-label="PH2" role="img" viewBox="20 340 555 165" xmlns="http://www.w3.org/2000/svg"><g>
 <path fill="#fff" d="M77.417969 388.960938v32.898437h62.363281c4.652344-.09375 7.996094-1.441406 10.03125-4.042969 2.03125-2.601562 3.027344-5.894531 2.980469-9.871094v-5.0625c.070312-4.457031-1.15625-7.882812-3.683594-10.285156-2.527344-2.394531-6.78125-3.609375-12.765625-3.636719zm-40.128907 98.332031V356.425781h109.359376c12.589843.078125 22.335937 2.050781 29.226562 5.917969 6.894531 3.867188 11.667969 9.160156 14.328125 15.878906 2.65625 6.722656 3.921875 14.398438 3.800781 23.03125v11.207032c.070313 6.664062-1.011718 13.183593-3.25 19.550781-2.242187 6.367187-6.058593 11.652343-11.449218 15.851562-5.394532 4.199219-12.785157 6.378907-22.175782 6.53125H77.417969v32.898438z"/>

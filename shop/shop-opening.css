@@ -1,0 +1,60 @@
+.shop-opening {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+}
+.shop-opening::backdrop { background: #000; }
+.shop-opening-stage { position: absolute; inset: 0; overflow: hidden; }
+.shop-opening-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(85vw, 690px);
+  max-width: none;
+  height: auto;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+.shop-opening-logo:first-child { width: min(66vw, 515px); }
+.shop-opening-logo:last-child { width: min(88vw, 735px); }
+.shop-opening.is-playing .shop-opening-logo {
+  animation: shop-logo-pass 1.05s cubic-bezier(.22,.7,.24,1) both;
+}
+.shop-opening.is-playing .shop-opening-logo:nth-child(2) { animation-delay: 1.05s; }
+.shop-opening.is-playing .shop-opening-logo:nth-child(3) {
+  animation-delay: 2.1s;
+  animation-duration: 1.35s;
+}
+@keyframes shop-logo-pass {
+  0% { opacity: 0; transform: translate(-50%, -46%) scale(.91); }
+  28%, 72% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -53%) scale(1.035); }
+}
+.shop-opening.is-finishing { animation: shop-opening-reveal .32s ease both; }
+.shop-opening.is-finishing::backdrop { animation: shop-opening-reveal .32s ease both; }
+@keyframes shop-opening-reveal { to { opacity: 0; } }
+.shop-opening-skip {
+  position: absolute;
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #737373;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) { .shop-opening { display: none !important; } }
