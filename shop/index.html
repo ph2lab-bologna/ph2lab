@@ -333,9 +333,11 @@ header .head{gap:22px;justify-content:space-between}
 <style>
 .notice a{color:#fff;font-weight:800}
 .notice a:hover,.notice a:focus-visible{text-decoration:underline}
-.shop-brand-lockup .partner-mark{padding:0;border:0;background:#000;color:inherit;opacity:.48;transition:opacity .18s ease}
+.shop-brand-lockup .partner-mark{display:grid;place-items:center;padding:0;border:0;background:#000;color:inherit}
+.shop-brand-lockup .partner-mark img{opacity:.62;transition:opacity .18s ease}
 .shop-brand-lockup button{cursor:pointer}
-.shop-brand-lockup .partner-mark[aria-pressed="true"],.shop-brand-lockup .partner-mark:hover,.shop-brand-lockup .partner-mark:focus-visible{opacity:1}
+.shop-brand-lockup .partner-mark[aria-pressed="true"] img,.shop-brand-lockup .partner-mark:hover img,.shop-brand-lockup .partner-mark:focus-visible img{opacity:1}
+.shop-brand-lockup .partner-mark:hover{opacity:1}
 .shop-brand-lockup .partner-mark-ph2{width:82px;aspect-ratio:2.85}
 </style>
 </head>
