@@ -346,8 +346,8 @@ body.contact-panel-active{overflow:hidden!important}
 .contact-footer .social-icons{width:min(100%,560px);display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(10px,1.5vw,22px);margin:0 0 5vh;align-items:center}
 .contact-footer .social-icons a{width:100%;height:auto;aspect-ratio:1/1;max-width:52px;justify-self:start}
 .contact-footer .social-icons svg{width:76%;height:76%;overflow:hidden}
-.contact-footer .footer-brand{width:min(100%,560px)}
-.contact-footer .footer-logo{width:100%;max-width:560px}
+.contact-footer .footer-brand{width:min(100%,360px)}
+.contact-footer .footer-logo{width:100%;max-width:360px}
 @media(max-width:760px){
   .contact-footer .social-icons{width:100%;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
   .contact-footer .social-icons a{max-width:40px}
