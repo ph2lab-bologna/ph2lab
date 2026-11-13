@@ -353,3 +353,23 @@ body.contact-panel-active{overflow:hidden!important}
   .contact-footer .social-icons a{max-width:40px}
   .contact-footer .footer-brand{width:min(74vw,280px)}
 }
+
+.partner-brands{display:flex;align-items:center;gap:clamp(14px,3vw,54px)}
+.partner-mark{display:block;overflow:hidden;flex:none;color:inherit}
+.partner-mark img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.partner-mark-just{width:clamp(74px,9vw,142px);aspect-ratio:2.16}
+.partner-mark-zelab{width:clamp(108px,15vw,222px);aspect-ratio:5.45}
+.partner-mark:hover{opacity:.8}
+.partner-mark:focus-visible{outline:2px solid #ff760f;outline-offset:4px}
+.contact-brand-row{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 24px}
+.contact-panel .contact-brand,.contact-footer .contact-brand-row .footer-brand{margin:0;width:auto;flex:0 1 auto;min-width:0}
+.contact-brand-row .footer-logo{display:block;width:min(35vw,380px);height:auto}
+.contact-footer .contact-brand-row .footer-logo{width:min(35vw,360px)}
+.contact-footer .social-icons,.contact-icon-links{display:flex;flex-wrap:wrap;gap:clamp(8px,2vw,25px);width:auto}
+.contact-footer .social-icons a,.contact-icon-links a{width:clamp(40px,4vw,52px);height:clamp(40px,4vw,52px);max-width:none;aspect-ratio:1}
+.contact-footer .social-icons svg,.contact-icon-links svg{width:76%;height:76%}
+@media(max-width:500px){
+ .contact-brand-row{flex-wrap:wrap;gap:18px;margin-bottom:20px}
+ .contact-brand-row .partner-brands{margin-left:auto}
+ .contact-brand-row .footer-logo,.contact-footer .contact-brand-row .footer-logo{width:min(43vw,195px)}
+}
