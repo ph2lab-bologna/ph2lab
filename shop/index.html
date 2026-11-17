@@ -500,6 +500,7 @@ const nonBenissimoBack = gallerySets.art_ph2017?.[1];
 if (nonBenissimoBack) gallerySets.art_ph2019.push(nonBenissimoBack);
 const singleBack = gallerySets.art_ph2011?.[1];
 if (singleBack) gallerySets.art_ph2033.push(singleBack);
+gallerySets.art_26046?.push('catalogue-media/camouflage-detail.jpg');
 </script>
 <script>
 const catalogColors={"26001":"Sport Grey","26002":"Nero","26003":"Verde scuro","26004":"Sport Grey","26005":"Beige","26006":"Nero","26007":"Nero","26008":"Beige","26009":"Sport Grey","26010":"Nero","26011":"Nero","26012":"Nero","26013":"Bianco","26014":"Bianco","26015":"Bianco","26016":"Bianco","26017":"Nero","26018":"Sport Grey","26019":"Sport Grey","26020":"Nero","26021":"Sport Grey","26022":"Nero","26023":"Sport Grey","26024":"Nero","26025":"Nero","26026":"Bianco","26027":"Sport Grey","26028":"Nero","26029":"Sport Grey","26030":"Bianco","26031":"Nero","26032":"Sport Grey","26033":"Bianco","26035":"Sport Grey","26036":"Bianco","26037":"Nero","26038":"Sport Grey","26039":"Bianco","26040":"Sport Grey","26041":"Nero","26043":"Blu navy","26044":"Sport Grey","26045":"Bianco","26046":"Nero","26047":"Verde scuro","PH2002":"Nero","PH2003":"Bianco","PH2004":"Nero","PH2005":"Bianco","PH2006":"Bordeaux","PH2007":"Bianco","PH2010":"Bianco","PH2012":"Nero","PH2013":"Bianco","PH2014":"Turchese","PH2015":"Bordeaux","PH2016":"Blu Royal","PH2018":"Nero","PH2020":"Nero","PH2021":"Bianco","PH2022":"Nero","PH2023":"Nero","PH2024":"Nero","PH2025":"Nero","PH2026":"Nero","PH2028":"Verde scuro","PH2029":"Nero","PH2030":"Blu Royal","PH2031":"Rosa","PH2032":"Nero","PH2034":"Giallo","PH2035":"Nero","PH2036":"Bianco","PH2037":"Nero","PH2038":"Nero","PH2039":"Bluette","PH2040":"Verde","PH2041":"Bordeaux","PH2042":"Verde","PH2043":"Bluette","PH2044":"Bordeaux","PH2045":"Nero","PH2046":"Blu Royal","DA DEFINIRE":"","PH210":"Blu Navy","PH204":"Bianco","PH218":"Bianco","PH215":"Nero","PH200A":"Sport Grey","PH200B":"Sport Grey","PH200C":"Sport Grey","PH200D":"Sport Grey","PH200E":"Sport Grey","PH200F":"Sport Grey","PH207":"Bianco","PH217":"Nero","JB007":"Verde petrolio","JB032":"Nero","PH216":"Blu Navy","PH221":"Sport Grey","PH222":"Sabbia","JB016":"Nero","JB020":"Verde scuro"};
@@ -577,8 +578,8 @@ function updateOrderLink(){
 function showDetail(id){
  const p=products.find(x=>x.id===id);if(!p)return;
  currentProduct=p;
- // Le due immagini del prodotto, nell'ordine già verificato: fronte e retro.
- currentImages=(gallerySets[id]||[p.image]).slice(0,2);
+ const photoLimit=id==='art_26046'?3:2;
+ currentImages=(gallerySets[id]||[p.image]).slice(0,photoLimit);
  currentImageIndex=p.coverView==='rear'&&currentImages.length>1?1:0;
  document.getElementById('dcat').textContent=p.cat==='CITY COLLECTION'?'JUST BOLOGNA':'PH2 LAB DESIGN';
  document.getElementById('dtitle').textContent=p.title;
@@ -594,7 +595,8 @@ function drawGallery(){
  document.getElementById('galleryImage').alt=`${currentProduct.title}, foto ${currentImageIndex+1} di ${currentImages.length}`;
  document.getElementById('galleryCount').textContent=`${currentImageIndex+1} / ${currentImages.length}`;
  const many=currentImages.length>1;
-  document.getElementById("galleryHint").textContent = many ? "Fronte / Retro · Usa le frecce o tocca una miniatura" : "Vista frontale";
+ const galleryViews=currentImages.length===3?"Fronte / Retro / Dettaglio":"Fronte / Retro";
+ document.getElementById("galleryHint").textContent=many?`${galleryViews} · Usa le frecce o tocca una miniatura`:"Vista frontale";
  ['galleryPrev','galleryNext','lightboxPrev','lightboxNext'].forEach(id=>document.getElementById(id).hidden=!many);
  const holder=document.getElementById('galleryThumbs');holder.innerHTML='';holder.hidden=!many;
  currentImages.forEach((url,i)=>{
