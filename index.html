@@ -6,7 +6,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="#0a0a0a" name="theme-color"/>
 <title>PH2 LAB — Portfolio di Michele Fustini</title>
-<link href="styles.css?v=20261113-brands" rel="stylesheet"/>
+<link href="styles.css?v=20261117-contacts" rel="stylesheet"/>
 </head>
 <body>
 <div class="intro" id="intro">
@@ -54,7 +54,7 @@
 <button aria-controls="menuOverlay" aria-expanded="false" aria-label="Apri menu" class="menu-button" id="menuButton" type="button"><i></i><i></i><i></i></button>
 </header>
 <div aria-hidden="true" class="menu-overlay" id="menuOverlay">
-<nav class="overlay-nav"><a href="#top"><span>01</span>HOME</a><a href="#about"><span>02</span>ABOUT</a><a href="work.html"><span>03</span>WORK</a><a href="shop/"><span>04</span>SHOP</a><a data-contact-open="" href="#contactPanel"><span>05</span>CONTACT</a></nav>
+<nav class="overlay-nav"><a href="#top"><span>01</span>HOME</a><a href="#about"><span>02</span>ABOUT</a><a href="work.html"><span>03</span>WORK</a><a href="shop/"><span>04</span>SHOP</a><a data-contact-open="" aria-haspopup="dialog" aria-controls="contactPanel" href="#contactPanel"><span>05</span>CONTACT</a></nav>
 <div class="menu-meta">
 <p>PH2 LAB — BOLOGNA</p>
 <p>BRANDING / PACKAGING / PRODUCT DESIGN / SPORTS / EDITORIAL / RETAIL</p>
@@ -122,10 +122,9 @@
 </footer>
 </main>
 </div>
-<div aria-hidden="true" class="contact-panel" id="contactPanel">
-<button aria-label="Chiudi contatti" class="contact-panel-close" type="button">×</button>
+<dialog aria-label="Contatti PH2 LAB" class="contact-panel" id="contactPanel">
+<button aria-label="Chiudi contatti" class="contact-panel-close" type="button" autofocus>×</button>
 <div class="contact-panel-inner">
-<div class="contact-brand-row">
 <div aria-label="PH2 LAB" class="contact-brand">
 <svg aria-hidden="true" class="ph2-logo footer-logo" viewbox="20 340 555 165">
 <g>
@@ -138,11 +137,6 @@
 </g>
 </svg>
 </div>
-<div class="partner-brands" aria-label="Progetti PH2 LAB">
-  <a class="partner-mark partner-mark-just" href="/shop/#drops"><img src="/shop/opening-just-bologna.png" alt="Just Bologna"></a>
-  <a class="partner-mark partner-mark-zelab" href="https://ze-lab.weebly.com/"><img src="/shop/opening-zelab.png" alt="ZeLab — Uncommon Creative Goods"></a>
-</div>
-</div>
 <div class="contact-panel-links">
 <div aria-label="Contatti e social PH2 LAB" class="contact-icon-links">
 <a aria-label="Indicazioni stradali" href="https://www.google.com/maps/dir/?api=1&amp;destination=Via+Della+Beverara+202%2F2%2C+Bologna" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="8 6 32 41"><path d="M24 44c8-11 12-17 12-24 0-6.6-5.4-12-12-12S12 13.4 12 20c0 7 4 13 12 24Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="3"></path><circle cx="24" cy="20" fill="none" r="4.8" stroke="currentColor" stroke-width="3"></circle></svg></a>
@@ -153,9 +147,13 @@
 <a aria-label="Instagram" href="https://www.instagram.com/ph2lab/" rel="noopener" target="_blank"><svg aria-hidden="true" viewBox="5 5 38 38"><rect fill="none" height="28" rx="8" stroke="currentColor" stroke-width="3" width="28" x="10" y="10"></rect><circle cx="24" cy="24" fill="none" r="6.5" stroke="currentColor" stroke-width="3"></circle><circle cx="32.5" cy="15.5" fill="currentColor" r="2.2"></circle></svg></a>
 </div>
 </div>
+<div class="partner-brands" aria-label="Progetti PH2 LAB">
+  <a class="partner-mark partner-mark-just" href="/shop/#drops"><img src="/shop/opening-just-bologna.png" alt="Just Bologna"></a>
+  <a class="partner-mark partner-mark-zelab" href="https://ze-lab.weebly.com/"><img src="/shop/opening-zelab.png" alt="ZeLab — Uncommon Creative Goods"></a>
 </div>
 </div>
-<script src="script.js"></script>
-<script src="contact-modal.js"></script>
+</dialog>
+<script src="script.js?v=20261117-contacts"></script>
+<script src="contact-modal.js?v=20261117-contacts"></script>
 </body>
 </html>

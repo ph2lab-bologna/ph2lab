@@ -260,97 +260,82 @@ a{color:inherit}
 #contact { scroll-margin-top: 0; }
 
 
-/* Contact panel — consolidated final rules */
+/* Full-screen contact dialog */
 .contact-panel{
   position:fixed;
   inset:0;
-  z-index:1000;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  background:rgba(0,0,0,.58);
-  backdrop-filter:blur(8px);
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .22s ease,visibility .22s ease;
-  color:#fff;
-}
-.contact-panel.open{opacity:1;visibility:visible}
-.contact-panel-inner{
-  position:relative;
   width:100%;
-  background:#111;
-  padding:clamp(42px,7vw,90px) 5vw clamp(46px,7vw,84px);
-  transform:translateY(34px);
-  transition:transform .28s ease;
-  border-top:1px solid #3b3b3b;
-}
-.contact-panel.open .contact-panel-inner{transform:translateY(0)}
-.contact-panel-close{
-  position:absolute;
-  right:5vw;
-  top:28px;
+  height:100%;
+  max-width:none;
+  max-height:none;
+  margin:0;
+  padding:0;
   border:0;
-  background:transparent;
   color:#fff;
-  font-size:44px;
-  line-height:1;
+  background:#000;
+  overflow:auto;
+  overscroll-behavior:contain;
+}
+.contact-panel::backdrop{background:#000}
+.contact-panel-inner{
+  min-height:100%;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:"brand ." "links partners";
+  align-content:end;
+  align-items:end;
+  gap:clamp(18px,3vh,38px) 24px;
+  padding:84px 5vw clamp(32px,8vh,100px);
+  background:url("assets/contact-microphone.jpg") no-repeat right top 10vh / auto min(71vh,850px);
+}
+.contact-panel-close{
+  position:fixed;
+  top:20px;
+  right:clamp(16px,4vw,64px);
+  z-index:1;
+  width:48px;
+  height:48px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  color:#fff;
+  background:#000;
+  font:36px/1 Arial,Helvetica,sans-serif;
   cursor:pointer;
 }
-.contact-kicker{
-  display:block;
-  font-size:11px;
-  letter-spacing:.18em;
-  color:#aaa;
-  margin-bottom:22px;
-}
-.contact-brand{
-  display:block;
-  width:min(760px,78vw);
-  margin:0 0 28px;
-  color:#fff;
-  cursor:default;
-  pointer-events:none;
-}
+.contact-panel-close:hover{background:#222}
+.contact-panel :is(a,button):focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.contact-panel .contact-brand{grid-area:brand;min-width:0}
 .contact-brand .footer-logo{
   display:block;
-  width:min(380px,62vw);
+  width:min(28vw,430px);
+  max-width:100%;
   height:auto;
 }
-.contact-panel-links{display:block}
-.contact-icon-links{
-  display:grid;
-  grid-template-columns:repeat(7,52px);
-  gap:clamp(14px,2vw,28px);
-  align-items:center;
-  margin:0;
-}
+.contact-panel-links{grid-area:links;min-width:0}
+.contact-panel .partner-brands{grid-area:partners;justify-self:end}
+.contact-icon-links{align-items:center}
 .contact-icon-links a{
-  display:grid!important;
+  display:grid;
   place-items:center;
-  width:52px;
-  height:52px;
-  border:0!important;
-  padding:0!important;
-  color:#fff!important;
+  color:#fff;
   text-decoration:none;
   transition:transform .2s ease,opacity .2s ease;
 }
 .contact-icon-links a:hover{transform:translateY(-3px);opacity:.8}
-.contact-icon-links svg{display:block;width:76%;height:76%}
+.contact-icon-links svg{display:block}
 body.contact-panel-active{overflow:hidden!important}
-@media(max-width:760px){
-  .contact-panel-inner{padding:70px 22px 48px}
-  .contact-panel-close{right:22px;top:20px}
-  .contact-brand{width:92vw;margin-bottom:24px}
-  .contact-brand .footer-logo{width:min(68vw,300px)}
-  .contact-icon-links{
-    grid-template-columns:repeat(7,minmax(0,1fr));
-    gap:8px;
-    width:100%;
+
+@media(max-width:640px){
+  .contact-panel-inner{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"brand" "links" "partners";
+    padding:78px 22px 36px;
+    background-size:auto min(52vh,430px);
+    background-position:right top 8vh;
   }
-  .contact-icon-links a{width:40px;height:40px}
-  .contact-icon-links svg{width:34px;height:34px}
+  .contact-brand .footer-logo{width:min(56vw,280px)}
+  .contact-panel .partner-brands{justify-self:start;margin-top:8px}
 }
 
 /* PH2 LAB — navigazione richiesta: tre linee, nessuna scritta MENU */
@@ -384,7 +369,7 @@ body.contact-panel-active{overflow:hidden!important}
 .partner-mark:hover{opacity:.8}
 .partner-mark:focus-visible{outline:2px solid #ff760f;outline-offset:4px}
 .contact-brand-row{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 24px}
-.contact-panel .contact-brand,.contact-footer .contact-brand-row .footer-brand{margin:0;width:auto;flex:0 1 auto;min-width:0}
+.contact-footer .contact-brand-row .footer-brand{margin:0;width:auto;flex:0 1 auto;min-width:0}
 .contact-brand-row .footer-logo{display:block;width:min(35vw,380px);height:auto}
 .contact-footer .contact-brand-row .footer-logo{width:min(35vw,360px)}
 .contact-footer .social-icons,.contact-icon-links{display:flex;flex-wrap:wrap;gap:clamp(8px,2vw,25px);width:auto}

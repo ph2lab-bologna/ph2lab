@@ -82,6 +82,7 @@ if (menuOverlay) {
   menuOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', event => {
     const href = a.getAttribute('href') || '';
     toggleMenu(false);
+    if (a.hasAttribute('data-contact-open')) return;
     if (href.startsWith('#')) {
       event.preventDefault();
       history.replaceState(null, '', href);
